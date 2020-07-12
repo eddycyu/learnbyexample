@@ -29,7 +29,6 @@ public class Fibonacci {
      * @return the nth Fibonacci number in the sequence
      */
     private static long findNthFibonacci(int n) {
-
         // populate known values
         long fn1 = 0;           // F0 = 0
         long fn2 = 1;           // F1 = 1
@@ -37,11 +36,12 @@ public class Fibonacci {
         // return known values for n <= 1
         if (n == 0) {
             return fn1;         // F0
-        } else if (n == 1) {
+        }
+        if (n == 1) {
             return fn2;         // F1
         }
 
-        // F2 is a given since we know F0 and F1
+        // F2 can be derived since we know F0 and F1
         long fn = fn1 + fn2;    // F2
 
         // compute Fn for n > 2
@@ -51,11 +51,12 @@ public class Fibonacci {
             fn = fn1 + fn2;
         }
 
+        // return values for n > 1
         return fn;
     }
 
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
+        final int n = Integer.parseInt(args[0]);
         System.out.println(findNthFibonacci(n));
     }
 }
