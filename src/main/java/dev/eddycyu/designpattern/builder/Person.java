@@ -153,8 +153,8 @@ public class Person {
     public static class Builder {
 
         // same attributes as outer class
-        String firstName;
-        private String lastName;
+        private final String firstName;
+        private final String lastName;
         private String middleName;
         private int birthDay;
         private int birthMonth;
@@ -248,6 +248,8 @@ public class Person {
             person.setBirthMonth(birthMonth);
             person.setBirthYear(birthYear);
             person.setSsn(ssn);
+            person.setPhoneNumber1(phoneNumber1);
+            person.setPhoneNumber2(phoneNumber2);
             person.setStreetAddress1(streetAddress1);
             person.setStreetAddress2(streetAddress2);
             person.setCity(city);
